@@ -6,4 +6,4 @@ for line in hand:
     line = line.rstrip()
     integers = re.findall('([0-9]+)', line)   
     for number in integers: numlist.append(int(number))            an
-                                 
+ #problem12completed                                
