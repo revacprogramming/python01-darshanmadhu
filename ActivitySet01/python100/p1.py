@@ -8,4 +8,4 @@ variable = str(darshu)
 
 print("ur name has" + variable + "characters")
 
-#type() - function to find the type of function wheather int or strings
+#type() - function to find the type of function wheather int or string
