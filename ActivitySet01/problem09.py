@@ -6,6 +6,7 @@ filename = "dataset/mbox-short.txt"
 fh = open(filename)
 ans = 0
 count = 0
+#lists
 for line in fh:
     if not line.startswith("X-DSPAM-Confidence:"):
         continue
