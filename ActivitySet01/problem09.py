@@ -1,21 +1,11 @@
 # Lists
-#problem09
-
-filename = "dataset/mbox-short.txt"
-
-fh = open(filename)
-ans = 0
-count = 0
-#lists
+ll=[]
+fname = input("Enter file name: ")
+fh = open(fname)
+lst = list()
 for line in fh:
-    if not line.startswith("X-DSPAM-Confidence:"):
-        continue
-    pod = line
-    pod = pod.find(':')
-    pod = line[pod+1:]
-    pod = pod.strip()
-    pod = float(pod)
-    ans = ans + pod
-    count += 1
-average = ans/count
-print("Average spam confidence:", average)
+    for tt in line.split():
+        if tt not in ll:
+            ll.append(tt)
+
+print(sorted(ll))#sort function is used to sort the list

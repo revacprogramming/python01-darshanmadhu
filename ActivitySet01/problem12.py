@@ -1,9 +1,11 @@
- 
-import re     
-hand = open("regex_sum_340267.txt", "r")
-numlist = []      
-for line in hand:
-    line = line.rstrip()
-    integers = re.findall('([0-9]+)', line)   
-    for number in integers: numlist.append(int(number))            an
- #problem12completed                                
+import re
+hand=input('Enter the file name:')
+handle=open(hand)
+total=0
+for line in handle:
+     line=line.rstrip()
+     ss=re.findall('[0-9]+',line)
+     for i in ss:
+         total+=int(i)
+    
+print(total)

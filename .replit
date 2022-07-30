@@ -1,2 +1,2 @@
-language = "python3"
-run = " "
+T1 = ("D","A","R","S","H","A","N")
+T1 = X[:4] + X[-1:-3]

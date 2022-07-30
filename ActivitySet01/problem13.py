@@ -1,17 +1,12 @@
 # Network Programming
 # https://www.py4e.com/lessons/network
-import socket
-
-mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-mysock.connect(('data.pr4e.org', 80))
-cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()
-new_data='b'
-mysock.send(cmd)
-
-while True:
-    data = mysock.recv(512)
-    if len(data) < 1:
-        break
-    print(data.decode(),end='')
-
-mysock.close()
+from urllib.request import*
+from bs4 import BeautifulSoup
+count=0
+url=input('enter the url :')
+html=urlopen(url).read()
+soup=BeautifulSoup(html,'html.parser')
+tags=soup('span')
+for tag in tags:
+   count+=int(tag.contents[0])
+print(count)

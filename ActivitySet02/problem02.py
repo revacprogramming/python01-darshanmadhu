@@ -1,18 +1,21 @@
-
 def add(a, b):
-    pass  # ...
-
-
+  return(a+b)
+  pass
 def output(a, b, sum):
-    pass  # ...
-
-
+  print(f'{a}+{b} is {sum}')
+  pass
 def main():
-    a, b = input_two_numbers()
-    sum = add(a, b)
-
-    output(a, b, sum)
-
-
-if __name__ == '__main__':
-    main()
+  a,b=map(int,input("input? ").split())
+  sum= add(a,b)
+  output(a, b, sum)
+  
+main()
+#,,,,,
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs

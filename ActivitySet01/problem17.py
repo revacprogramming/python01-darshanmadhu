@@ -1,17 +1,15 @@
-# Network Programming
-# https://www.py4e.com/lessons/network
-import socket
+import urllib.request, urllib.parse, urllib.error
+from bs4 import BeautifulSoup
+import ssl
 
-mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-mysock.connect(('data.pr4e.org', 80))
-cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()
-new_data='b'
-mysock.send(cmd)
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
 
-while True:
-    data = mysock.recv(512)
-    if len(data) < 1:
-        break
-    print(data.decode(),end='')
+url = input('Enter')
+html = urllib.request.urlopen(url, context=ctx).read()
+soup = BeautifulSoup(html,'html.parser')
 
-mysock.close()
+tags = soup('a')
+for tag in tags:
+  print(tag.get('href',None))
